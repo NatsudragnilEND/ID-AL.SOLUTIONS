@@ -1,0 +1,196 @@
+$font-family-montserrat: 'Montserrat';
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin font($weight: normal) {
+  font-family: $font-family-montserrat;
+  font-weight: $weight;
+}
+
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  @include font(400);
+  font-weight: 400;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  background: none;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+}
+.mission {
+  color: var(--title, #131414);
+  @include font(700);
+  font-size: 35px;
+  text-transform: capitalize;
+  @include media(1200){
+    font-size: 30px;
+  }
+  @include media(700){
+    font-size: 25px;
+  }
+  @include media(500){
+    font-size: 21px;
+  }
+  padding: 30px;
+  text-align: center;
+}
+.vtu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+
+  p {
+    color: var(--title, #131414);
+    @include font(700);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--title, #131414);
+    font-size: 35px !important;
+    @include font(700);
+    text-transform: capitalize;
+    @include media(700){
+      font-size: 27px !important;
+    }
+         @include media(400) {
+           font-size: 23px !important;
+         }
+    max-width: 450px;
+    span {
+      color: var(--dark-green, #217191);
+      font-size: 35px !important;
+      @include font(700);
+      text-transform: capitalize;
+      @include media(700) {
+          font-size: 27px !important;
+        }
+      
+        @include media(400) {
+          font-size: 23px !important;
+        }max-width: 450px;
+    }
+  }
+}
+.nana-enter-active,
+.nana-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.nana-enter-from,
+.nana-leave-to {
+  opacity: 0;
+}
+.container {
+  max-width: 1350px;
+  width: 80% !important;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  max-width: 93%;
+  width: 100%;
+  margin: auto;
+}
+.shadow {
+  transition: .26s;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+.vto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+
+  p {
+    color: var(--title, #131414);
+    @include font(700);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--title, #131414);
+    font-size: 35px !important;
+    @include font(700);
+    text-transform: capitalize;
+@include media(700) {
+    font-size: 27px !important;
+  }
+
+  @include media(400) {
+    font-size: 23px !important;
+  }
+    span {
+      color: var(--dark-green, #217191);
+      font-size: 35px !important;
+      @include font(700);
+      text-transform: capitalize;
+      @include media(700) {
+          font-size: 27px !important;
+        }
+      
+        @include media(400) {
+          font-size: 23px !important;
+        }
+    }
+  }
+}
+.to-the-top{
+  font-size: 30px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  background-color: #ffcca8ea;
+  transition: .25s;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+  &:hover{
+    box-shadow: -2px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+}

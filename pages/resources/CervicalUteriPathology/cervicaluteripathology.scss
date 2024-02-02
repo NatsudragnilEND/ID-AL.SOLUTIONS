@@ -1,0 +1,245 @@
+$font-family-montserrat: 'Montserrat';
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin font($weight: normal) {
+  font-family: $font-family-montserrat;
+  font-weight: $weight;
+}
+
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #204959;
+  padding: 150px 0;
+  background-repeat: no-repeat;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+
+  @include media(600) {
+    padding: 50px 0 !important;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(300px);
+    max-width: 60%;
+
+    @include media(1600) {
+      display: none;
+    }
+
+    @include media(700) {
+      max-width: 300px;
+    }
+
+    @include media(500) {
+      max-width: 250px;
+    }
+  }
+
+  .container {
+    .flexy {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      align-self: flex-start;
+      flex-wrap: wrap;
+      @include media(700) {
+        gap: 10px;
+      }
+
+      .kavychki {
+        opacity: 0.6;
+      }
+
+      a {
+        color: var(--white, #FFF);
+        font-size: 16px;
+
+        @include media(1200) {
+          font-size: 15px;
+        }
+
+        @include media(700) {
+          font-size: 14px;
+        }
+
+        @include media(400) {
+          font-size: 13px;
+        }
+      }
+
+      div {
+        font-size: 20px;
+        color: white;
+
+        @include media(1200) {
+          font-size: 18px;
+        }
+
+        @include media(700) {
+          font-size: 16px;
+        }
+
+        @include media(400) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+    .perpe {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .man {
+      color: white;
+      font-size: 14px;
+      @include font(700);
+      border-radius: 10px;
+      background: #3C6373;
+      padding: 10px 15px;
+      width: max-content;
+
+      @include media(650) {
+        font-size: 12px;
+        padding: 7px 10px;
+      }
+    }
+
+    z-index: 100;
+
+    h2 {
+      font-size: 40px;
+      color: white;
+      font-family: system-ui;
+      @include font(700);
+
+      @include media(650) {
+        font-size: 30px;
+      }
+
+      @include media(450) {
+        font-size: 20px;
+      }
+    }
+
+    .neos {
+      color: var(--white, #bcbcbc);
+      font-size: 18px;
+      max-width: 900px;
+      text-align: center;
+
+      @include media(650) {
+        font-size: 15px;
+      }
+
+      @include media(650) {
+        font-size: 12px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+
+      @include media(650) {
+        gap: 10px;
+      }
+
+      .fir {
+        border-radius: 60px;
+        background: #C7A48B;
+        padding: 20px 45px;
+        font-size: 18px;
+        color: white;
+        border: 1px solid #C7A48B;
+        transition: .4s;
+        cursor: pointer;
+        z-index: 100;
+
+        @include media(650) {
+          padding: 10px 25px;
+        }
+
+        @include media(450) {
+          font-size: 15px;
+          @include font(500);
+        }
+
+        &:hover {
+          border: 1px solid #000;
+          background: transparent;
+          scale: 0.95;
+        }
+      }
+
+      .sec {
+        @include media(650) {
+          padding: 10px 25px;
+        }
+
+        a {
+          font-size: 18px;
+          color: white;
+
+          @include media(450) {
+            font-size: 15px;
+            @include font(500);
+          }
+        }
+
+        cursor: pointer;
+        scale: 0.95;
+        transition: .4s;
+        border-radius: 60px;
+        background: transparent;
+        padding: 20px 45px;
+        border: 1px solid #000;
+
+        &:hover {
+          border: 1px solid #C7A48B;
+          background: #C7A48B;
+          scale: 1;
+        }
+      }
+    }
+  }
+}

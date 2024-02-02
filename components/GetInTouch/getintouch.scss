@@ -1,0 +1,327 @@
+$font-family-montserrat: 'Montserrat';
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-family-montserrat;
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin font($weight: normal) {
+  font-family: $font-family-montserrat;
+  font-weight: $weight;
+}
+
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+.wrapper {
+  border-radius: 40px;
+  background: #EDF1F2;
+
+  .container {
+    display: flex;
+    padding: 50px 0;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @include media(1490) {
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .lra {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 45px;
+
+      @include media(700) {
+        gap: 25px;
+      }
+
+      .ostal {
+        color: var(--text, #494B51);
+        max-width: 550px;
+        font-size: 18px;
+
+        @include media(600) {
+          font-size: 15px;
+        }
+      }
+
+      .daxarow {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .line {
+          height: 60px;
+          width: 1px;
+          background-color: #a7a7a7;
+        }
+
+        .xarow {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .iphone {
+            color: #888;
+            @include font(500);
+            font-size: 14px;
+          }
+
+          a {
+            color: var(--title, #131414);
+            font-size: 18px;
+
+            @include media(650) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mav {
+  gap: 15px !important;
+
+  @include media(700) {
+    align-items: center !important;
+  }
+
+}
+
+.java {
+  margin-top: 150px;
+}
+
+.iphone {
+  color: #888;
+  @include font(500);
+  font-size: 14px;
+
+  @include media(700) {
+    max-width: 500px;
+    margin-left: 7%;
+    display: flex;
+    align-self: start;
+  }
+
+  @include media(550) {
+    margin-left: 3%;
+  }
+}
+
+.in {
+  padding: 20px;
+  width: 500px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  resize: none;
+  color: #131414;
+  @include font(500);
+  font-size: 20px;
+
+  @include media(1550) {
+    width: 400px;
+  }
+
+  @include media(500) {
+    width: 350px;
+  }
+
+  @include media(450) {
+    width: 300px;
+  }
+
+  @include media(380) {
+    width: 250px;
+  }
+
+  &::placeholder {
+    color: rgba(77, 77, 77, 0.50);
+    font-size: 18px;
+  }
+}
+
+.chikit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    scale: 1.7;
+  }
+
+  .dodger {
+    display: flex;
+    align-items: center;
+    color: var(--text, #494B51);
+    font-size: 16px;
+
+    @include media(700) {
+      flex-wrap: wrap;
+    }
+
+    a {
+      color: var(--text, #3957D3);
+      font-size: 16px;
+      text-decoration-line: underline;
+    }
+  }
+}
+
+.chochok {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @include media(510) {
+    gap: 15px;
+  }
+
+  button {
+    padding: 15px 40px;
+    border: #217191 1px solid;
+    border-radius: 60px;
+    background: var(--dark-green, #217191);
+    color: var(--white, #FFF);
+    @include font(500);
+    cursor: pointer;
+    font-size: 18px;
+    transition: .2s;
+
+    &:hover {
+      background: transparent;
+      color: #131414;
+      border: #b0b0b0 1px solid;
+    }
+
+    @include media(650) {
+      padding: 10px 30px;
+    }
+
+    @include media(500) {
+      padding: 15px 25px;
+      font-size: 15px;
+    }
+  }
+
+  a {
+    padding: 15px 40px;
+    border: #b0b0b0 1px solid;
+    border-radius: 60px;
+
+    color: #131414;
+    @include font(500);
+    cursor: pointer;
+    font-size: 18px;
+    transition: .2s;
+    background: transparent;
+
+    &:hover {
+      background: var(--dark-green, #217191);
+      color: var(--white, #FFF);
+    }
+
+    @include media(650) {
+      padding: 10px 30px;
+    }
+
+    @include media(500) {
+      padding: 15px 25px;
+      font-size: 15px;
+    }
+  }
+}
+
+.isnot {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  padding: 10px 40px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  color: #ff3e61;
+  background-color: #929ed2;
+  border-radius: 20px 0px 40px 20px;
+  @include font(500);
+
+  span {
+    color: #ed0f0f;
+    margin-left: 20px;
+    font-size: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+    padding: 7px 16px;
+
+    &:hover {
+      background-color: #91919179;
+    }
+  }
+}
+
+.isnott {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  padding: 10px 40px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  color: #0fedc1;
+  background-color: #929ed2;
+  border-radius: 20px 0px 40px 20px;
+  @include font(500);
+
+  span {
+    color: #ed0f0f;
+    margin-left: 20px;
+    font-size: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+    padding: 7px 16px;
+
+    &:hover {
+      background-color: #91919179;
+    }
+  }
+}
+
+.toti {
+  background: #dbdbdb !important;
+  color: #4e4e4e !important;
+  border: #646464 1px solid !important;
+
+  &:hover {
+    background: #dbdbdb !important;
+    color: #4e4e4e !important;
+    border: #646464 1px solid !important;
+  }
+}
